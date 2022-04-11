@@ -1,4 +1,4 @@
-import os
+import os, json
 from util import *
 from data.config import *
 
@@ -9,7 +9,8 @@ class Client():
 
     def login(self):
         try:
-            self.data = readJSON(self.id)
+            self.json = readJSON()
+            self.data = self.json[str(self.id)]
             return True
         except:
             return False
@@ -22,4 +23,35 @@ class Client():
 
 
     def addCupom(self, quantity):
-        self.cupons += quantity
+        self.data[CUPONS] += quantity
+        print(f'Adicionando {quantity} cupom(s) para {self.data[NOME]}')
+        print(f'Cupons: {self.data[CUPONS]}')
+
+        self.json[str(id)] = self.data
+        with open(CLIENTS_DATA, "w") as write_file:
+            json.dump(self.json, write_file, indent=4)
+
+    def removerCupom(self, quantity):
+        self.data[CUPONS] -= quantity
+        if self.data[CUPONS] < 0:
+            self.data[CUPONS] = 0
+        print(f'Removendo {quantity} cupom(s) de {self.data[NOME]}')
+        print(f'Cupons: {self.data[CUPONS]}')
+
+        self.json[str(id)] = self.data
+        with open(CLIENTS_DATA, "w") as write_file:
+            json.dump(self.json, write_file, indent=4)
+
+    def cadastrar(self):
+        nome = input('Digite seu nome: ')
+        cpf = input('Digite seu CPF: ')
+        email = input('Digite seu e-mail: ')
+        cupons = 0
+        self.json[str(self.id)] = {
+            NOME: nome,
+            CPF: cpf,
+            EMAIL: email,
+            CUPONS: cupons
+        }
+        with open(CLIENTS_DATA, "w") as write_file:
+            json.dump(self.json, write_file, indent=4)

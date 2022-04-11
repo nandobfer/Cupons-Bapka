@@ -3,6 +3,12 @@
         "Nome": "Fernando",
         "CPF": "02576698506",
         "E-mail": "fernando@agenciazop.com.br",
-        "Cupons": 3
+        "Cupons": 5
+    },
+    "<built-in function id>": {
+        "Nome": "Fernando",
+        "CPF": "02576698506",
+        "E-mail": "fernando@agenciazop.com.br",
+        "Cupons": 5
     }
 }
