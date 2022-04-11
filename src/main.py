@@ -17,4 +17,4 @@ else:
     if input() == 's':
         client.cadastrar()
     else:
-        pass
+        os.system('cls')
