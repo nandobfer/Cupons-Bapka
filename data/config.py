@@ -1,3 +1,17 @@
+# Requests definitions
+def requestClientId():
+    return int(input('Digite o ID de cliente: '))
+def requestCupomHandler():
+    return input('Deseja adicionar ou remover cupons? (+/-): ')
+ADD_CUPOM = '+'
+REMOVE_CUPOM = '-'
+def requestSignUp():
+    return input("Cliente não cadastrado, deseja se cadastrar? (s/n): ")
+SIGNUP = 's'
+
+# Database definitions
+
+
 # quantidade de cupons
 N_CUPONS = 1
 
