@@ -1,3 +1,15 @@
+# quantidade de cupons
+N_CUPONS = 1
+
+# clients data file
+CLIENTS_DATA = 'data/clients.json'
+
+# data constants
+CUPONS = "Cupons"
+NOME = "Nome"
+CPF = "CPF"
+EMAIL = "E-mail"
+
 # Requests definitions
 def requestClientId():
     return int(input('Digite o ID de cliente: '))
@@ -10,16 +22,3 @@ def requestSignUp():
 SIGNUP = 's'
 
 # Database definitions
-
-
-# quantidade de cupons
-N_CUPONS = 1
-
-# clients data file
-CLIENTS_DATA = 'data/clients.json'
-
-# data constants
-CUPONS = "Cupons"
-NOME = "Nome"
-CPF = "CPF"
-EMAIL = "E-mail"
