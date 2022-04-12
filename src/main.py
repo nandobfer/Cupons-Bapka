@@ -3,18 +3,18 @@ from data.config import *
 import os
 
 os.system('cls')
-id = int(input('Digite o ID de cliente: '))
+id = requestClientId()
 client = Client(id)
 if client.login():
     client.printDados()
-    choose = input('Deseja adicionar ou remover cupons? (+/-): ')
-    if choose == '+':
+    choose = requestCupomHandler()
+    if choose == ADD_CUPOM:
         client.addCupom(N_CUPONS)
     else:
         client.removerCupom(N_CUPONS)
 else:
-    print("Cliente não cadastrado, deseja se cadastrar? (s/n): ")
-    if input() == 's':
+    choose = requestSignUp()
+    if choose == SIGNUP:
         client.cadastrar()
     else:
         os.system('cls')
